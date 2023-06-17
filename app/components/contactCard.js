@@ -8,7 +8,6 @@ const ContactCard = () => {
     message: "",
   });
   const [status,setStatus]=useState("");
-console.log('user :>> ', user);
   const handleChange = (e) => {
     const val= e.target.value;
     const name= e.target.name;
@@ -29,6 +28,7 @@ console.log('user :>> ', user);
                 message:user.message
             })
         })
+        console.log('response :>> ', response);
         // Set the status based on the response from the API route
         if (response.status === 200) {
             setUser({
@@ -46,8 +46,10 @@ console.log('user :>> ', user);
     }
 
 }
+console.log('status :>> ', status);
   return (
-    <div className="max-w-screen-xl mt-12 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+    <>
+      <div className="max-w-screen-xl mt-12 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
       <div className="flex flex-col justify-between">
         <div>
           <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
@@ -1072,6 +1074,8 @@ console.log('user :>> ', user);
             defaultValue={""}
           />
         </div>
+      {status === "success" &&<h1 className="text-2xl mt-4 w-full font-bold text-green-900">Thank you for your message!</h1>}
+      {status === "error" &&<h1 className="text-2xl mt-4 w-full font-bold text-red-900">Something went wrong</h1>}
         <div className="mt-8">
           <button
             type="submit"
@@ -1081,10 +1085,8 @@ console.log('user :>> ', user);
           </button>
         </div>
       </form>
-      {status === "success" &&<h1>Thank you for your message!</h1>}
-      {status === "error" &&<h1>Something went wrong</h1>}
-
     </div>
+    </>
   );
 };
 
