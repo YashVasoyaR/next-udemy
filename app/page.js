@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import Page from './pages/page'
-
+import nextImg from "@/public/next.webp"
+import Image from "next/image";
 const Home=async()=> {
   return (
    <>
-    <Page/>
+    <Image className="w-full" src={nextImg} height={200} width={200} />
    </>
   )
 }

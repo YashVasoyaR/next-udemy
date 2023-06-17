@@ -24,7 +24,7 @@ const MovieCard = (list) => {
             <h1 className="text-lg">
               <Link
                 className="no-underline cursor-pointer hover:underline text-black"
-                href={`/movies/${id}`}
+                href={`/ServerMovie/${id}`}
                 prefetch={false}
               >
                 {title}
@@ -38,7 +38,7 @@ const MovieCard = (list) => {
           <footer className="flex items-center justify-between leading-none p-2 md:p-4">
             <Link
               className="flex items-center no-underline hover:underline text-black"
-              href={`/movies/${id}`}
+              href={`/ServerMovie/${id}`}
               prefetch={false}
             >
               <Image
@@ -55,7 +55,7 @@ const MovieCard = (list) => {
             </Link>
             <Link
               className="no-underline cursor-pointer text-grey-darker hover:text-red-dark"
-              href={`/movies/${id}`}
+              href={`/ServerMovie/${id}`}
               prefetch={false}
             >
               <span className="hidden">Like</span>
