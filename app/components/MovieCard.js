@@ -38,7 +38,7 @@ const MovieCard = (list) => {
           <footer className="flex items-center justify-between leading-none p-2 md:p-4">
             <Link
               className="flex items-center no-underline hover:underline text-black"
-              href={`/ServerMovie/${id}`}
+              href={`/movies/${id}`}
               prefetch={false}
             >
               <Image
@@ -55,7 +55,7 @@ const MovieCard = (list) => {
             </Link>
             <Link
               className="no-underline cursor-pointer text-grey-darker hover:text-red-dark"
-              href={`/ServerMovie/${id}`}
+              href={`/movies/${id}`}
               prefetch={false}
             >
               <span className="hidden">Like</span>
